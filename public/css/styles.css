@@ -61,7 +61,12 @@
     width: 100%;
     height: 40px;
 }
-
+.followBtn{
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+}
 .tabs{
     border-right: solid 1px #e2d8d8;
 }

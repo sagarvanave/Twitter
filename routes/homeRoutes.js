@@ -10,8 +10,8 @@ router.get("/", async (req, res, next) => {
         .populate("postedBy")
         .sort({ "createdAt": -1 })
         .catch(error => console.log(error));
+
     let data=[];
-    
     for (let i = 0; i < result.length; i++){
         item={};
         item['tweet']=result[i].content;
