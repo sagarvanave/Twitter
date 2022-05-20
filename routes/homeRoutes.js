@@ -4,8 +4,15 @@ const Post = require('../schemas/PostSchema');
 
 router.get("/", async (req, res, next) => {
     let searchObj = {};
-    let userId = req.session.user._id;
-    searchObj.postedBy = {$in : [userId]};
+    let userIds = [];
+
+    userIds.push(req.session.user._id);
+    //add following ids to fetch their tweets
+    req.session.user.following.forEach(userId => {
+        userIds.push(userId);
+    })
+
+    searchObj.postedBy = {$in : userIds};
     let result = await Post.find(searchObj)
         .populate("postedBy")
         .sort({ "createdAt": -1 })
@@ -25,16 +32,20 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req,res, next) => {
         let userId=req.session.user._id;
-        let tweet=req.body.tweet;
-        let data = {
-            content: tweet,
-            postedBy: userId
+        let tweet=req.body.tweet.trim();
+        if(tweet!=""){
+            let data = {
+                content: tweet,
+                postedBy: userId
+            }
+            Post.create(data).then(() => {
+                return res.redirect('/home');
+            });
         }
-        Post.create(data).then(() => {
+        else {
             return res.redirect('/home');
-        });
+        }
+
 });
-
-
 
 module.exports = router;

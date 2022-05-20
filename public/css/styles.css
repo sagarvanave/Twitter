@@ -89,6 +89,12 @@
     height: 600px;
 }
 
+#searchedTweets{
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    height: 500px;
+}
+
 .middle-tab #home{
     font-size:22px;
     font-weight:bold;

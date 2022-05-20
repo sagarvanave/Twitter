@@ -39,12 +39,14 @@ const loginRoute= require('./routes/loginRoutes');
 const homeRoute= require('./routes/homeRoutes');
 const logoutRoute= require('./routes/logoutRoutes');
 const searchRoutes = require('./routes/searchRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 app.use("/register", registerRoute);
 app.use("/login", loginRoute);
 app.use("/logout", logoutRoute);
 app.use("/home", middleware.requireLogin, homeRoute);
 app.use("/search", middleware.requireLogin, searchRoutes);
+app.use("/user", middleware.requireLogin, userRoutes);
 
 
 app.get("/", middleware.requireLogin,(req, res,next) => {

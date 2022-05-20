@@ -10,11 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
-
     <script>
         function searchTweets(search){
-            if(search){
+            if(search.trim()!=""){
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
@@ -37,12 +35,16 @@
                 lastName = data[i].lastName;
                 userName = data[i].userName;
                 tweet = data[i].tweet;
-                if(data[i].currentUser){
-                    tweetsdata += '<div class="row tweet_box"><div class="col-10"><b>' + firstName + ' ' + lastName + '</b> <p>' + tweet + '</p></div></div><hr>';
-                }else{
-                    tweetsdata += '<div class="row tweet_box"><div class="col-10"><b>' + firstName + ' ' + lastName + '</b> <button type="button" class="followBtn">Follow</button> <p>' + tweet + '</p></div></div><hr>';
-                }
+                uid=data[i].id;
+                 if(typeof firstName == "undefined") {firstName="";}
+                 if(typeof lastName=="undefined") {lastName="";}
+                 if(typeof tweet=="undefined"){tweet="";}
 
+                    if(data[i].currentUser){
+                        tweetsdata += '<div class="row tweet_box"><div class="col-10"><b>' + firstName + ' ' + lastName + '</b> <p>' + tweet + '</p></div></div><hr>';
+                    }else{
+                        tweetsdata += '<div class="row tweet_box"><div class="col-10"><b>' + firstName + ' ' + lastName + '</b> <a href="user/follow/'+uid+'"><button type="button" class="followBtn">Follow</button></a> <p>' + tweet + '</p></div></div><hr>';
+                    }
             }
             tweets.innerHTML = tweetsdata;
         }
