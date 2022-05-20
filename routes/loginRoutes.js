@@ -4,7 +4,11 @@ const bcrypt = require("bcrypt");
 const User = require('../schemas/UserSchema');
 
 router.get("/", (req, res, next) => {
+    if(req.session.user){
+        return res.redirect('/home');
+    }
     res.status(200).render("login");
+
 });
 
 router.post("/", async (req,res, next) => {
