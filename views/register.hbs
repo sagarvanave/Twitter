@@ -22,17 +22,20 @@
                     <p class="text-center errorMsg">{{errorMsg}}</p>
                     <div class="form-group">
                         <label for="firstname">First Name:</label>
-                        <input type="text" class="form-control" id="firstname" name="firstName" value="{{firstName}}" required>
+                        <input type="text" class="form-control" id="firstname" name="firstName" value="{{firstName}}"
+                            required>
                     </div>
 
                     <div class="form-group">
                         <label for="lastname">Last Name:</label>
-                        <input type="text" class="form-control" id="lastname" name="lastName" value="{{lastName}}" required>
+                        <input type="text" class="form-control" id="lastname" name="lastName" value="{{lastName}}"
+                            required>
                     </div>
 
                     <div class="form-group">
                         <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="username" name="userName" value="{{userName}}" required>
+                        <input type="text" class="form-control" id="username" name="userName" value="{{userName}}"
+                            required>
                     </div>
 
                     <div class="form-group">
@@ -50,28 +53,15 @@
                         <input type="password" class="form-control" id="cpwd" required>
                     </div>
                     <button type="submit" class="btn btn-info form-control registerBtn">Register</button><br><br>
-                    <a href="/login" ><p class="text-center">  Already have an account? Login here.</p></a>
+                    <a href="/login">
+                        <p class="text-center"> Already have an account? Login here.</p>
+                    </a>
                 </form>
             </div>
         </div>
         <div class="col-sm-3"></div>
     </div>
-
-
 </body>
-<script type="text/javascript">
-    var passwordField = document.getElementById("pwd");
-    var passwordConfirmField = document.getElementById("cpwd");
-    var form = document.getElementById("registerForm");
-
-    function validateForm() {
-        if (passwordField.value != passwordConfirmField.value) {
-            alert("Passwords does not match. Please try again.");
-        }
-        else {
-            form.submit();
-        }
-    }
-</script>
+<script type="text/javascript" src="js/validation.js"></script>
 
 </html>
