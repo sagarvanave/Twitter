@@ -1,3 +1,4 @@
+
 .regdiv {
     border-radius: 10px;
     padding: 20px;
@@ -13,4 +14,97 @@
 }
 .errorMsg{
     color: red;
+}
+
+.searchbox{
+    border-radius: 10px;
+}
+
+.list-group-item{
+    border: none !important;
+    font-family: sans-serif;
+}
+
+.twitter_nav_menu{
+    border-radius: 40px;
+    cursor:pointer;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.twitter_nav_menu b{
+    margin-left: 20px;
+}
+
+.twitter_nav_menu:hover{
+    background-color: #b2b6b8;
+}
+
+.twitter_nav_menu i{
+    font-size: 25px;
+}
+
+.tweet-btn{
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+}
+.tweet-btn2{
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    
+    width: 100%;
+    height: 40px;
+}
+
+.tabs{
+    border-right: solid 1px #e2d8d8;
+}
+
+.home{
+    font-size:25px;
+    width: 100px;
+    background-color: red;
+}
+
+.searchBox{
+    margin-top: 5px;
+    border-radius: 30px !important;
+    padding-left: 25px;
+    background-color:#c2c6cd61;
+    outline: none !important;
+}
+.middle-tab{
+    overflow-y:auto !important;
+    height: 600px;
+}
+
+.middle-tab #home{
+    font-size:22px;
+    font-weight:bold;
+    font-family: sans-serif;
+}
+
+.profile_pic{
+    background-color:#a2cce9;
+    font-size:25px;
+    padding:15px;
+    color:#1f7cba;
+    border-radius: 100px;
+}
+.tweetfield{
+    outline: none !important;
+    width: 100%;
+    height:70px;
+    font-size: 20px;
+    border: none !important;
+}
+.tweet_box{
+    border-bottom-color: #b2b6b8 !important;
 }
