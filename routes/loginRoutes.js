@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 const User = require('../schemas/UserSchema');
 
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 

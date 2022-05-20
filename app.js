@@ -5,6 +5,7 @@ const middleware = require('./middleware');
 const mongoose = require("mongoose");
 const bodyParser=require('body-parser');
 const session = require('express-session');
+const path = require('path')
 
 //App engine set to hbs because we are using handlebars 
 app.set('view engine', 'hbs');
@@ -22,6 +23,7 @@ mongoose.connect("mongodb://localhost:27017/twitter")
 const server = app.listen(port, () => console.log("Server listening on port " + port));
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "public")));
 
 //Session initialization
 
