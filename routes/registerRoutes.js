@@ -39,10 +39,9 @@ router.post("/", async (req, res, next) => {
 
             //Password encrypted using bcrypt
             data.password=await bcrypt.hash(password,10);
-            console.log(data);
         
             User.create(data).then((user) => {
-                console.log("User is registered.");
+                console.log(user);
                 req.session.user=user;
                 return res.redirect('/home');
             });
