@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .regdiv {
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 10px;
+            box-shadow: 0px 4px 14px grey;
+            background-color: white;
+        }
+        .regPage{
+           background-color:#0099ff;
+        }
+        .registerBtn{
+            background-color: #0099ff;
+        }
+        .errorMsg{
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="regPage">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 regdiv">
+                <form method="post" id="registerForm" onsubmit="event.preventDefault();">
+                    <h2 class="text-center">Login</h2>
+                    <hr>
+                    <p class="text-center errorMsg">{{errorMsg}}</p>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" name="userName" value="{{userName}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-info form-control registerBtn">Login</button><br><br>
+                    <a href="/register" ><p class="text-center">Need an account? Register here.</p></a>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</body>
+
+</html>
