@@ -44,7 +44,8 @@ router.post("/", async (req, res, next) => {
         
             User.create(data).then((user) => {
                 console.log("User is registered.");
-                return res.redirect('/register');
+                req.session.user=user;
+                return res.redirect('/home');
             });
         }else{
             if(email===user.email){

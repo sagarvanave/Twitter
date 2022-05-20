@@ -29,7 +29,8 @@ router.post("/", async (req,res, next) => {
         if(user!=null){
             var result= await bcrypt.compare(password,user.password);
             if(result){
-                console.log("User is logged in");
+                req.session.user=user;
+                return res.redirect('/home');
             }
             else{
                 payload.errorMsg="Password is incorrect";

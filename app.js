@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const middleware = require('./middleware');
 const mongoose = require("mongoose");
 const bodyParser=require('body-parser');
+const session = require('express-session');
 
 //App engine set to hbs because we are using handlebars 
 app.set('view engine', 'hbs');
@@ -21,15 +23,26 @@ const server = app.listen(port, () => console.log("Server listening on port " + 
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/",(req, res) => {
-    res.send("Hello there, <br> This is simple twitter app");
-});
+//Session initialization
+
+app.use(session({
+    secret: "twitter app",
+    resave: true,
+    saveUninitialized: false
+}));
 
 //Routes
 const registerRoute= require('./routes/registerRoutes');
 const loginRoute= require('./routes/loginRoutes');
+const homeRoute= require('./routes/homeRoutes');
+const logoutRoute= require('./routes/logoutRoutes');
 
 app.use("/register", registerRoute);
 app.use("/login", loginRoute);
+app.use("/logout", logoutRoute);
+app.use("/home", middleware.requireLogin, homeRoute);
 
 
+app.get("/", middleware.requireLogin,(req, res,next) => {
+    res.status(200).render("home"); 
+});
