@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3003;
 const middleware = require('./middleware');
 const mongoose = require("mongoose");
 const bodyParser=require('body-parser');
@@ -12,7 +12,7 @@ app.set('view engine', 'hbs');
 app.set("views","views");
 
 //Database connection setup
-mongoose.connect("mongodb://localhost:27017/twitter")
+mongoose.connect("mongodb+srv://sagar:ssv1437@cluster0.ri4qt.mongodb.net/Twitter?retryWrites=true&w=majority")
 .then(() => {
                 console.log("database connection successful");
 }).catch((err) => {
