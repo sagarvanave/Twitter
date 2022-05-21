@@ -22,7 +22,7 @@ router.get("/", async (req, res, next) => {
     }
     //If user search with hashtag then user accounts will not pupulate
     let matchedUsers;
-    if(search.toString().startsWith("#")==false)
+    if(search.toString().startsWith("#")===false)
     {
         matchedUsers = await User.find(userSearchObject)
             .select(("firstName lastName userName"))
