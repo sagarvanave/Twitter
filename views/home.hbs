@@ -5,10 +5,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script>
-        var xhttp = new XMLHttpRequest();
-        xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-    </script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -66,15 +62,15 @@
         <div class="row">
             <div class="col navbar tabs">
                 <ul class="list-group">
-                    <li class="list-group-item"><i class="fab fa-twitter" style="font-size:35px;color:#1DA1F2"></i></li>
+                    <li class="list-group-item"><img src="images/twitter.png"></li>
                     <br>
-                    <li class="list-group-item twitter_nav_menu"><a href="/home"><i class="fas fa-home"></i><b>Home</b></a></li>
-                    <li class="list-group-item twitter_nav_menu"><i class='fas fa-hashtag'></i><b>Explore</b></li>
-                    <li class="list-group-item twitter_nav_menu"><i class='far fa-bell'></i><b>Notifications</b></li>
-                    <li class="list-group-item twitter_nav_menu"><i class="far fa-envelope"></i><b>Messages</b></li>
-                    <li class="list-group-item twitter_nav_menu"><i class="far fa-bookmark"></i><b>Bookmarks</b></li>
-                    <li class="list-group-item twitter_nav_menu"><i class="far fa-list-alt"></i><b>Lists</b></li>
-                    <li class="list-group-item twitter_nav_menu"><i class="far fa-user"></i><b>Profile</b></li>
+                    <li class="list-group-item twitter_nav_menu"><a href="/home"><img src="images/home.png"><b>Home</b></a></li>
+                    <li class="list-group-item twitter_nav_menu"><img src="images/explore.png"><b>Explore</b></li>
+                    <li class="list-group-item twitter_nav_menu"><img src="images/notification.png"></i><b>Notifications</b></li>
+                    <li class="list-group-item twitter_nav_menu"><img src="images/message.png"><b>Messages</b></li>
+                    <li class="list-group-item twitter_nav_menu"><img src="images/bookmark.png"><b>Bookmarks</b></li>
+                    <li class="list-group-item twitter_nav_menu"><img src="images/list.png"><b>Lists</b></li>
+                    <li class="list-group-item twitter_nav_menu"><img src="images/user.png"><b>Profile</b></li>
                     <li class="list-group-item"> <button class="tweet-btn" data-toggle="modal"
                             data-target="#myModal"><b>Tweet</b></button> </li>
                 </ul>
@@ -89,7 +85,7 @@
                 <p id="home">Home</p>
                 <form method="post">
                     <div class="row">
-                        <div class="col-1"><i class="fas fa-user profile_pic"></i></div>
+                        <div class="col-1"><img src="images/profile.png"></div>
                         <div class="col-1"></div>
                         <div class="col-10">
                             <input type="text" class="tweetfield" name="tweet" placeholder="What's happening?"
@@ -167,7 +163,7 @@
                 lastName = data[i].lastName;
                 userName = data[i].userName;
                 tweet = data[i].tweet;
-                tweetsdata += '<div class="row tweet_box"><div class="col-1"><i class="fas fa-user profile_pic"></i></div><div class="col-1"></div><div class="col-10"><b>' + firstName + ' ' + lastName + '</b> @' + userName + '<p>' + tweet + '</p></div></div><hr>';
+                tweetsdata += '<div class="row tweet_box"><div class="col-1"><img src="images/profile.png"></div><div class="col-1"></div><div class="col-10"><b>' + firstName + ' ' + lastName + '</b> @' + userName + '<p>' + tweet + '</p></div></div><hr>';
             }
             tweets.innerHTML = tweetsdata;
         });
