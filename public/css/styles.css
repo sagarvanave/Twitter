@@ -94,7 +94,9 @@
     overflow-x:hidden !important;
     height: 500px;
 }
-
+a{
+    text-decoration: none !important;
+}
 .middle-tab #home{
     font-size:22px;
     font-weight:bold;

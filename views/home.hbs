@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script>
+
+        //Search tweets and users
         function searchTweets(search){
+            const currenturl=(window.location.href).toString().replace('home','');
             if(search.trim()!=""){
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
@@ -19,7 +22,7 @@
                         displaySearchedTweets(this.responseText);
                     }
                 };
-                xhttp.open("GET", "http://localhost:3000/search?search="+encodeURIComponent(search), true);
+                xhttp.open("GET", currenturl+"search?search="+encodeURIComponent(search), true);
                 xhttp.send();
             }
             else{
@@ -59,7 +62,7 @@
                 <ul class="list-group">
                     <li class="list-group-item"><i class="fab fa-twitter" style="font-size:35px;color:#1DA1F2"></i></li>
                     <br>
-                    <li class="list-group-item twitter_nav_menu"><i class="fas fa-home"></i><b>Home</b></li>
+                    <li class="list-group-item twitter_nav_menu"><a href="/home"><i class="fas fa-home"></i><b>Home</b></a></li>
                     <li class="list-group-item twitter_nav_menu"><i class='fas fa-hashtag'></i><b>Explore</b></li>
                     <li class="list-group-item twitter_nav_menu"><i class='far fa-bell'></i><b>Notifications</b></li>
                     <li class="list-group-item twitter_nav_menu"><i class="far fa-envelope"></i><b>Messages</b></li>
@@ -117,14 +120,17 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
                     </div>
+                    <form method="post">
                     <div class="modal-body">
-                        <p>Some text in the modal.</p>
+                        <input type="text" class="tweetfield" name="tweet" placeholder="What's happening?"
+                               autocomplete="off">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <div class="col-9"></div>
+                            <div class="col-3"><button type="submit" class="tweet-btn2"><b>Tweet</b></button></div>
                     </div>
+                    </form>
                 </div>
 
             </div>
