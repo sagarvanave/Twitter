@@ -20,11 +20,16 @@ router.get("/", async (req, res, next) => {
             {userName:{$regex: search.search, $options: "i"}}
         ]
     }
+    //If user search with hashtag then user accounts will not pupulate
+    let matchedUsers;
+    if(search.toString().startsWith("#")==false)
+    {
+        matchedUsers = await User.find(userSearchObject)
+            .select(("firstName lastName userName"))
+            .sort({ "createdAt": -1 })
+            .catch(error => console.log(error));
+    }
 
-    let matchedUsers = await User.find(userSearchObject)
-        .select(("firstName lastName userName"))
-        .sort({ "createdAt": -1 })
-        .catch(error => console.log(error));
 
     let result = matchedPosts.concat(matchedUsers);
     const currentUserId=req.session.user._id;
