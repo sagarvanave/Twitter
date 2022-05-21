@@ -19,12 +19,13 @@ router.get("/", async (req, res, next) => {
         .catch(error => console.log(error));
 
     let data=[];
-    for (let i = 0; i < result.length; i++){
-        item={};
-        item['tweet']=result[i].content;
-        item['firstName']=result[i].postedBy.firstName;
-        item['lastName']=result[i].postedBy.lastName;
-        item['userName']=result[i].postedBy.userName;
+    let item;
+    for (let i = 0; i < result.length; i++) {
+        item = {};
+        item['tweet'] = result[i].content;
+        item['firstName'] = result[i].postedBy.firstName;
+        item['lastName'] = result[i].postedBy.lastName;
+        item['userName'] = result[i].postedBy.userName;
         data.push(item);
     }
     res.status(200).render("home", {responseObject:JSON.stringify(data)});

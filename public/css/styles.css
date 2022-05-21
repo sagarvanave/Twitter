@@ -7,15 +7,23 @@
     background-color: white;
 }
 .regPage{
-   background-color:#0099ff;
+   background-color:rgba(0, 0, 0, 0.4);
 }
-.registerBtn{
-    background-color: #0099ff;
+.formBtns{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+.formBtns:hover{
+    color: white !important;
+    background-color: #2f2f2f;
 }
 .errorMsg{
     color: red;
 }
-
+.twitterFormFileds{
+    height: 50px !important;
+}
 .searchbox{
     border-radius: 10px;
 }

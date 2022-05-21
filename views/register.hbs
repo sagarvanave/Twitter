@@ -2,66 +2,57 @@
 <html lang="en">
 
 <head>
-    <title>Registration</title>
+    <title>Twitter</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <body class="regPage">
     <div class="container">
         <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6 regdiv">
-                <form method="post" id="registerForm" onsubmit="event.preventDefault(); validateForm();">
-                    <h2 class="text-center">Register</h2>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 regdiv">
+
+                <form method="post" autocomplete="off">
+                    <h2 class="text-center">
+                        <i class="fab fa-twitter " style="font-size:35px;color:#1DA1F2"></i><br><br>
+                        Join Twitter today</h2>
                     <hr>
                     <p class="text-center errorMsg">{{errorMsg}}</p>
                     <div class="form-group">
-                        <label for="firstname">First Name:</label>
-                        <input type="text" class="form-control" id="firstname" name="firstName" value="{{firstName}}"
+                        <input type="text" class="form-control twitterFormFileds" id="firstname" name="firstName" placeholder="Firstname" value="{{firstName}}"
                             required>
                     </div>
 
                     <div class="form-group">
-                        <label for="lastname">Last Name:</label>
-                        <input type="text" class="form-control" id="lastname" name="lastName" value="{{lastName}}"
+                        <input type="text" class="form-control twitterFormFileds" id="lastname" name="lastName" placeholder="Lastname" value="{{lastName}}"
                             required>
                     </div>
 
                     <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="username" name="userName" value="{{userName}}"
+                        <input type="text" class="form-control twitterFormFileds" id="username" name="userName" placeholder="Username" value="{{userName}}"
                             required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email" value="{{email}}" required>
+                        <input type="email" class="form-control twitterFormFileds" id="email" name="email" placeholder="Email" value="{{email}}" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd" name="password" required>
+                        <input type="password" class="form-control twitterFormFileds" id="pwd" name="password" placeholder="Password" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="cpwd">Confirm Password:</label>
-                        <input type="password" class="form-control" id="cpwd" required>
-                    </div>
-                    <button type="submit" class="btn btn-info form-control registerBtn">Register</button><br><br>
-                    <a href="/login">
-                        <p class="text-center"> Already have an account? Login here.</p>
-                    </a>
+                    <button type="submit" class="btn form-control formBtns">Register</button><br><br>
+                    <p class="text-center"> Have an account already? <a href="/login">Log in</a></p>
                 </form>
             </div>
         </div>
-        <div class="col-sm-3"></div>
+        <div class="col-sm-4"></div>
     </div>
 </body>
-<script type="text/javascript" src="js/validation.js"></script>
-
 </html>
